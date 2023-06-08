@@ -28,10 +28,10 @@ const Add = ({ setClose }) => {
   const handleCreate = async () => {
     const data = new FormData();
     data.append("file", file);
-    data.append("upload_preset", "uploads");
+    data.append("upload_preset", "food_ordering");
     try {
       const uploadRes = await axios.post(
-        "https://api.cloudinary.com/v1_1/dsbyq4sj1/image/upload",
+        "https://api.cloudinary.com/v1_1/dtqf6pqjs/image/upload",
         data
       );
 

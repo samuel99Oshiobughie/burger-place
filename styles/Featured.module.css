@@ -1,6 +1,7 @@
 .container {
   height: calc(100vh - 100px);
-  background-color: #d1411e;
+  /* background-color: rgb(225, 206, 180); */
+  background-color: rgb(54, 32, 4);
   overflow: hidden;
   position: relative;
 }

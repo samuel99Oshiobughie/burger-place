@@ -10,15 +10,16 @@ import styles from "../styles/Home.module.css";
 
 export default function Home({ pizzaList, admin }) {
   const [close, setClose] = useState(true);
+
   return (
     <div className={styles.container}>
       <Head>
-        <title>Pizza Restaurant in Newyork</title>
+        <title>Burger Restaurant in London</title>
         <meta name="description" content="Best pizza shop in town" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logoburger.png" />
       </Head>
       <Featured />
-      {<AddButton setClose={setClose} />}
+      {admin && <AddButton setClose={setClose} />}
       <PizzaList pizzaList={pizzaList} />
       {!close && <Add setClose={setClose} />}
     </div>
