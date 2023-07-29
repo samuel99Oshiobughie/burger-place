@@ -34,7 +34,7 @@ export const getServerSideProps = async (ctx) => {
     admin = true;
   }
 
-  const res = await axios.get("http://localhost:3000/api/products");
+  const res = await axios.get("https://burgerplacee.netlify.app/api/products");
   return {
     props: {
       pizzaList: res.data,
