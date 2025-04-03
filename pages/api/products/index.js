@@ -1,5 +1,6 @@
 import dbConnect from "../../../util/mongo";
 import Product from "../../../models/Product";
+// import { connect } from "mongoose";
 
 export default async function handler(req, res) {
   const { method, cookies } = req;
@@ -11,6 +12,7 @@ export default async function handler(req, res) {
   if (method === "GET") {
     try {
       const products = await Product.find();
+      // console.log('products: ', products)
       res.status(200).json(products);
     } catch (err) {
       res.status(500).json(err);

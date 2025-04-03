@@ -9,6 +9,7 @@ import PizzaList from "../components/PizzaList";
 import styles from "../styles/Home.module.css";
 
 export default function Home({ pizzaList, admin }) {
+  // console.log("res:", pizzaList)
   const [close, setClose] = useState(true);
 
   return (
@@ -34,7 +35,8 @@ export const getServerSideProps = async (ctx) => {
     admin = true;
   }
 
-  const res = await axios.get("https://burgerplacee.netlify.app/api/products");
+
+  const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/products`);
   return {
     props: {
       pizzaList: res.data,

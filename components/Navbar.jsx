@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "../styles/Navbar.module.css";
 import { useSelector } from "react-redux";
 import Link from "next/link";
+import { Link as ScrollLink } from "react-scroll";
 
 const Navbar = () => {
   const quantity = useSelector((state) => state.cart.quantity);
@@ -20,15 +21,18 @@ const Navbar = () => {
       </div>
       <div className={styles.item}>
         <ul className={styles.list}>
-          <Link href="/" passHref>
-            <li className={styles.listItem}>Homepage</li>
-          </Link>
-          <Link href="/" passHref>
-          <li className={styles.listItem}>Products</li>
-          </Link>
-          <Link href="/" passHref>
-          <li className={styles.listItem}>Contact</li>
-          </Link>
+          <li className={styles.listItem}>
+          <ScrollLink to="home" smooth={true} duration={500}> Homepage</ScrollLink>
+          </li>
+          <li className={styles.listItem}>
+          <ScrollLink to="products" smooth={true} duration={500}>Products</ScrollLink>
+          </li>
+          <li className={styles.listItem}>
+          <ScrollLink to="contact" smooth={true} duration={500}>Contact</ScrollLink>
+          </li>
+
+          {/* <Link href="#contact" passHref> */}
+          {/* </Link> */}
           {/* <li className={styles.listItem}>Menu</li>
           <Image src="/img/logo.png" alt="" width="160px" height="69px" />
           <li className={styles.listItem}>Events</li>

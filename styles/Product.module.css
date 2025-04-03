@@ -111,12 +111,12 @@
     height: auto;
     text-align: center;
     flex-direction: column;
-    margin-top: 20px;
   }
-
+  
   .imgContainer {
     width: 70vw;
     height: 70vw;
+    margin-top: 20px;
   }
 
   .title {

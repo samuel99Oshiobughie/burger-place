@@ -114,7 +114,7 @@ const Order = ({ order }) => {
 };
 
 export const getServerSideProps = async ({ params }) => {
-  const res = await axios.get(`https://burgerplacee.netlify.app/api/orders/${params.id}`);
+  const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/orders/${params.id}`);
   return {
     props: { order: res.data },
   };
